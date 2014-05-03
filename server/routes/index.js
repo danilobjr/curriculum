@@ -2,7 +2,6 @@
 
 var i18n = require('i18n-2'),
     email = require('./../services/email');
-    // mandrill = require('node-mandrill')('hHIrMfvXpDSowsYwTLpLvQ');
 
 module.exports.index = function(req, res){
   res.render('index', { locale: req.i18n.getLocale() });
@@ -43,25 +42,4 @@ module.exports.sendMessage = function (req, res) {
       res.json({ success: true, message: successMessage });
     }
   });
-
-  // mandrill('/messages/send', {
-  //   message: {
-  //       to: [{email: 'danilobjr@gmail.com', name: 'Danilo Jr.'}],
-  //       from_email: req.body.email,
-  //       subject: "danilojunior.com - contact",
-  //       text: req.body.message + '<br><br>' + req.body.name + '<br>' + req.body.email
-  //   }
-  // }, function(error, response) {
-  //     //uh oh, there was an error
-  //     if (error) {
-  //       console.log(JSON.stringify(error));
-  //       res.json({ success: false, message: errorMessage });
-  //     }
-  //     //everything's good, lets see what mandrill said
-  //     else {
-  //       // console.log(response);
-  //       res.json({ success: true, message: successMessage });
-  //     }
-  // });
-
 };
