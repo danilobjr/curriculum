@@ -379,11 +379,11 @@
         <!--contact form start-->
         <div class="col-xs-12 col-sm-9 col-md-8 col-lg-8 conForm">
           <h4><%= __('contactFormTitle') %></h4>
-          <div id="message"></div>
-          <form method="post" action="php/contact.php" name="cform" id="cform">
+          <div id="notification"></div>
+          <form method="post" action="/send-message" name="cform" id="cform">
             <input name="name" id="name" type="text" class="col-xs-12 col-sm-6 col-md-6 col-lg-6" placeholder="<%= __('contactFormPlaceholderName') %>" >
             <input name="email" id="email" type="email" class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 noMarr" placeholder="<%= __('contactFormPlaceholderEmail') %>" >
-            <textarea name="comments" id="comments" cols="" rows="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="<%= __('contactFormPlaceholderMessage') %>"></textarea>
+            <textarea name="message" id="message" cols="" rows="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="<%= __('contactFormPlaceholderMessage') %>"></textarea>
             <input type="submit" id="submit" name="send" class="submitBnt" value="<%= __('contactFormSubmitButton') %>">
             <div id="simple-msg"></div>
           </form>

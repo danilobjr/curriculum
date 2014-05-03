@@ -27,3 +27,17 @@ module.exports.changeLocale = function (req, res){
 
   res.redirect('/');
 };
+
+module.exports.sendMessage = function (req, res) {
+  console.log(req.body);
+
+  var message = '';
+
+  if (req.i18n.getLocale() === 'en') {
+    message = 'Done. I\'ll reply you soon.';
+  } else {
+    message = 'Mensagem enviada. Aguarde, responderei em breve.';
+  }
+
+  res.json({ success: true, message: message });
+};
