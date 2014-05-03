@@ -1,6 +1,6 @@
 {
 	"tabTitle": "Danilo Barros Jr. | Back-end Developer",
-  "bannerTitle": "I'm Danilo Jr.",
+  "bannerTitle": "Danilo Barros Jr.",
   "bannerSubtitle": "Back-End Developer and Node.js lover",
   "menuAbout": "About",
   "menuSkills": "Skills",
@@ -46,7 +46,7 @@
   "experience1Function": "Web Developer",
   "experience1Description": "I worked with Microsoft technologies like ASP.NET MVC, Entity Framework and SQL Server and I met a marvelous library called jQuery.",
   "experience2StartDate": "Apr,2012",
-  "experience2EndDate": "Apr,2014",
+  "experience2EndDate": "Present",
   "experience2Local": "Freelancer",
   "experience2Function": "Web Developer",
   "experience2Description": "I made some works to some clients in this period. Also, a lot of new technologies was exploding my brain. I had been reading several book about Node.js, MongoDB, Grunt.js and I decided to develop a Node.js Boilerplate to all my future projects.",
