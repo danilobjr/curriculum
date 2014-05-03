@@ -1,27 +1,14 @@
 'use strict';
 
-var i18n = require('i18n-2');
+var i18n = require('i18n-2'),
+    email = require('./../services/email');
+    // mandrill = require('node-mandrill')('hHIrMfvXpDSowsYwTLpLvQ');
 
 module.exports.index = function(req, res){
-  // var viewModel = {
-  //   // tab: {
-  //   //   title: req.i18n.__('tabTitle')
-  //   // },
-  //   banner: {
-  //     title: req.i18n.__('bannerTitle'),
-  //     subtitle: req.i18n.__('bannerSubtitle')
-  //   }
-  // };
-  console.log(req.i18n.getLocale());
   res.render('index', { locale: req.i18n.getLocale() });
 };
 
 module.exports.changeLocale = function (req, res){
-  // you can set it directly like this
-  // req.i18n.setLocale('vi');
-
-  // or set it via the cookie
-  console.log(req.params.locale);
   res.cookie('locale', req.params.locale);
   req.i18n.setLocaleFromCookie();
 
@@ -29,15 +16,52 @@ module.exports.changeLocale = function (req, res){
 };
 
 module.exports.sendMessage = function (req, res) {
-  console.log(req.body);
-
-  var message = '';
+  var successMessage = '',
+      errorMessage = '';
 
   if (req.i18n.getLocale() === 'en') {
-    message = 'Done. I\'ll reply you soon.';
+    successMessage = 'Done. I\'ll reply you soon.';
+    errorMessage = 'Oops. There was an error. Try later.';
   } else {
-    message = 'Mensagem enviada. Aguarde, responderei em breve.';
+    successMessage = 'Mensagem enviada. Aguarde, responderei em breve.';
+    errorMessage = 'Oops. Ocorreu um erro. Tente mais tarde.';
   }
 
-  res.json({ success: true, message: message });
+  var message = {
+    to: [{email: 'danilobjr@gmail.com', name: 'Danilo Jr.'}],
+    from_name: req.body.name,
+    from_email: req.body.email,
+    subject: "danilojunior.com - contact",
+    html: req.body.message + '<br><br><b>' + req.body.name + '</b><br>' + req.body.email
+  };
+
+  email.sendMessage(message, function (err, response) {
+    if (err) {
+      console.log(JSON.stringify(error));
+      res.json({ success: false, message: errorMessage });
+    } else {
+      res.json({ success: true, message: successMessage });
+    }
+  });
+
+  // mandrill('/messages/send', {
+  //   message: {
+  //       to: [{email: 'danilobjr@gmail.com', name: 'Danilo Jr.'}],
+  //       from_email: req.body.email,
+  //       subject: "danilojunior.com - contact",
+  //       text: req.body.message + '<br><br>' + req.body.name + '<br>' + req.body.email
+  //   }
+  // }, function(error, response) {
+  //     //uh oh, there was an error
+  //     if (error) {
+  //       console.log(JSON.stringify(error));
+  //       res.json({ success: false, message: errorMessage });
+  //     }
+  //     //everything's good, lets see what mandrill said
+  //     else {
+  //       // console.log(response);
+  //       res.json({ success: true, message: successMessage });
+  //     }
+  // });
+
 };

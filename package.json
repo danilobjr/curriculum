@@ -8,6 +8,7 @@
   "dependencies": {
     "express": "3.4.8",
     "ejs": "*",
-    "i18n-2": "^0.4.6"
+    "i18n-2": "^0.4.6",
+    "mandrill-api": "^1.0.39"
   }
 }
