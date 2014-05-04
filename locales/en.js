@@ -72,8 +72,8 @@
   "contactSubheader": "Please feel free if you would like to have a chat.",
   "contactDetails": "Contact Details",
   "contactFormTitle": "Shoot a message!",
-  "contactFormPlaceholderName": "Your name...",
-  "contactFormPlaceholderEmail": "Your email...",
-  "contactFormPlaceholderMessage": "Your message...",
+  "contactFormPlaceholderName": "Your name",
+  "contactFormPlaceholderEmail": "your@email.com",
+  "contactFormPlaceholderMessage": "Your message",
   "contactFormSubmitButton": "Send message"
 }

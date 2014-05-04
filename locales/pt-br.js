@@ -72,8 +72,8 @@
   "contactSubheader": "Por favor, não deixe de mandar um alô.",
   "contactDetails": "Contatos",
   "contactFormTitle": "Envie uma mensagem!",
-  "contactFormPlaceholderName": "Seu nome...",
-  "contactFormPlaceholderEmail": "Seu email...",
-  "contactFormPlaceholderMessage": "Sua mensagem...",
+  "contactFormPlaceholderName": "Seu nome",
+  "contactFormPlaceholderEmail": "seu@email.com",
+  "contactFormPlaceholderMessage": "Sua mensagem",
   "contactFormSubmitButton": "Enviar mensagem"
 }
