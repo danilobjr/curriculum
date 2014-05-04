@@ -22,13 +22,23 @@ module.exports = function (grunt) {
           src: ['public/js/app/**/*.js']
         }
       }
+    },
+    express: {
+      development: {
+        options: {
+          port: 3000,
+          script: 'app.js'
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-express-server');
 
   grunt.registerTask('server', [
-    'jshint'
+    'jshint',
+    'express:development'
   ]);
 
   grunt.registerTask('default', ['server']);

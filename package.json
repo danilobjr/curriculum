@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "jshint-stylish": "^0.2.0",
-    "grunt-contrib-jshint": "^0.10.0"
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-express-server": "^0.4.17"
   }
 }
