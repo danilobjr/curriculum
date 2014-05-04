@@ -47,6 +47,20 @@ module.exports = function (grunt) {
         files: ['app.js', 'server/**/*.js'],
         tasks: ['jshint:server', 'express:dev']
       }
+    },
+
+    clean: {
+      build: ['.tmp', 'build/']
+    },
+    useminPrepare: {
+      html: 'server/views/index.ejs',
+      options: {
+        root: 'public/',
+        dest: 'build/public/'
+      }
+    },
+    usemin: {
+      html: 'build/server/views/index.ejs'
     }
   });
 
@@ -54,12 +68,27 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-usemin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   grunt.registerTask('server', [
     'jshint',
     'express:dev',
     'open',
     'watch'
+  ]);
+
+  grunt.registerTask('build', [
+    'clean:build',
+    'jshint',
+    'useminPrepare',
+    'concat',
+    'uglify',
+    'cssmin',
+    'usemin'
   ]);
 
   grunt.registerTask('default', ['server']);
