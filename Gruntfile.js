@@ -2,6 +2,9 @@
 
 module.exports = function (grunt) {
   grunt.initConfig({
+    config: {
+      port: process.env.PORT || 3000
+    },
     jshint: {
       server: {
         options: {
@@ -24,21 +27,39 @@ module.exports = function (grunt) {
       }
     },
     express: {
-      development: {
+      dev: {
         options: {
-          port: 3000,
+          port: '<%= config.port %>',
           script: 'app.js'
         }
+      }
+    },
+    open: {
+      dev: {
+        path: 'http://localhost:<%= config.port %>/'
+      }
+    },
+    watch: {
+      express: {
+        options: {
+          spawn: false
+        },
+        files: ['app.js', 'server/**/*.js'],
+        tasks: ['jshint:server', 'express:dev']
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-express-server');
+  grunt.loadNpmTasks('grunt-open');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('server', [
     'jshint',
-    'express:development'
+    'express:dev',
+    'open',
+    'watch'
   ]);
 
   grunt.registerTask('default', ['server']);
