@@ -1,0 +1,14 @@
+{
+  "name": "danilojrr.github.com",
+  "version": "0.0.0",
+  "homepage": "https://github.com/danilojrr/danilojrr.github.com",
+  "authors": [
+    "Danilo Jr. <danilobjr@gmail.com>"
+  ],
+  "description": "My Professional Profile",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery.validation": "~1.12.0"
+  }
+}

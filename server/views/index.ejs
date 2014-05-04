@@ -410,6 +410,8 @@
   <!--jquary min js-->
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script src="js/bootstrap.js"></script>
+  <script src="bower_components/jquery.validation/dist/jquery.validate.min.js"></script>
+  <script src="js/jquery.validate.locale.js"></script>
   <script type="text/javascript" src="js/jquery.gridrotator.js"></script>
   <!--for custom jquary-->
   <script src="js/custom.js"></script>
@@ -418,10 +420,13 @@
   <!--for menu jquary-->
   <script type="text/javascript" src="js/stickUp.js"></script>
   <script type="text/javascript">
-  jQuery(function($) {
-  $(document).ready( function() {
-    //enabling stickUp on the '.navbar-wrapper' class
-    $('.navbar-wrapper').stickUp({
+    jQuery(function($) {
+      // setting locale globally, so, this way, js files can access this property
+      window.locale = '<%= locale %>';
+
+      $(document).ready(function () {
+        //enabling stickUp on the '.navbar-wrapper' class
+        $('.navbar-wrapper').stickUp({
           parts: {
             0: 'banner',
             1: 'aboutme',
@@ -434,29 +439,25 @@
           itemClass: 'menuItem',
           itemHover: 'active',
           topMargin: 'auto'
-          });
-  });
+        });
+      });
 
-  $( ".navbar.navbar-inverse.navbar-static-top a" ).click(function() {
-    $( ".navbar-collapse" ).addClass( "hideClass" );
-  });
+      $( ".navbar.navbar-inverse.navbar-static-top a" ).click(function() {
+        $( ".navbar-collapse" ).addClass( "hideClass" );
+      });
 
+      $( ".navbar.navbar-inverse.navbar-static-top a" ).click(function() {
+        $( ".navbar-collapse" ).addClass( "collapse" );
+      });
 
-  $( ".navbar.navbar-inverse.navbar-static-top a" ).click(function() {
-    $( ".navbar-collapse" ).addClass( "collapse" );
-  });
+      $( ".navbar.navbar-inverse.navbar-static-top a" ).click(function() {
+        $( ".navbar-collapse" ).removeClass( "in" );
+      });
 
-
-  $( ".navbar.navbar-inverse.navbar-static-top a" ).click(function() {
-    $( ".navbar-collapse" ).removeClass( "in" );
-  });
-
-  $( ".navbar-toggle" ).click(function() {
-    $( ".navbar-collapse" ).removeClass( "hideClass" );
-  });
-
-
-  });
+      $( ".navbar-toggle" ).click(function() {
+        $( ".navbar-collapse" ).removeClass( "hideClass" );
+      });
+    });
   </script>
   <!--for portfoli filter jquary-->
   <script src="js/jquery.isotope.js" type="text/javascript"></script>
