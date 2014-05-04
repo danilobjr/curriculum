@@ -1,7 +1,6 @@
 'use strict';
 
-var i18n = require('i18n-2'),
-    email = require('./../services/email');
+var email = require('./../services/email');
 
 module.exports.index = function(req, res){
   res.render('index', { locale: req.i18n.getLocale() });
@@ -28,13 +27,13 @@ module.exports.sendMessage = function (req, res) {
 
   var message = {
     to: [{email: 'danilobjr@gmail.com', name: 'Danilo Jr.'}],
-    from_name: req.body.name,
-    from_email: req.body.email,
-    subject: "danilojunior.com - contact",
+    fromName: req.body.name,
+    fromEmail: req.body.email,
+    subject: 'danilojunior.com - contact',
     html: req.body.message + '<br><br><b>' + req.body.name + '</b><br>' + req.body.email
   };
 
-  email.sendMessage(message, function (err, response) {
+  email.sendMessage(message, function (err) {
     if (err) {
       console.log(err);
       res.json({ success: false, message: errorMessage });

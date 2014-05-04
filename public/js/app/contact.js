@@ -31,7 +31,7 @@
 
           var action = $(this).attr('action');
 
-          $("#notification").slideUp(750,function() {
+          $('#notification').slideUp(750,function() {
             $('#notification').hide();
 
             $('#submit')
@@ -51,7 +51,7 @@
               });
               // document.getElementById('notification').innerHTML = data.message;
               // $('#notification').slideDown('slow');
-              $('#cform img.contact-loader').fadeOut('slow', function() { $(this).remove() });
+              $('#cform img.contact-loader').fadeOut('slow', function() { $(this).remove(); });
               $('#submit').removeAttr('disabled');
               $('#cform').slideUp('slow').delay(5000).slideDown('slow');
               console.log(data);
