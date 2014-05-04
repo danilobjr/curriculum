@@ -376,8 +376,8 @@
           <!-- <p> <i class="fa fa-link "></i> <a href="www.websitename.com">www.websitename.com</a></p> -->
         </div>
         <!--contact info end-->
-        <!--contact form start-->
-        <div class="col-xs-12 col-sm-9 col-md-8 col-lg-8 conForm">
+        <!--contact form start->
+        <div class="col-xs-12 col-sm-9 col-md-8 conForm">
           <h4><%= __('contactFormTitle') %></h4>
           <div id="notification"></div>
           <form method="post" action="/send-message" name="cform" id="cform">
@@ -387,6 +387,26 @@
             <input type="submit" id="submit" name="send" class="submitBnt" value="<%= __('contactFormSubmitButton') %>">
             <div id="simple-msg"></div>
           </form>
+        </div>
+        <!--contact form end-->
+        <!--contact form start-->
+        <div class="col-xs-12 col-sm-9 col-md-8 conForm">
+          <h4><%= __('contactFormTitle') %></h4>
+          <div id="notification"></div>
+          <form method="post" action="/send-message" name="cform" id="cform" role='form'>
+            <div class="form-group">
+              <input name="name" id="name" type="text" class="form-control" placeholder="<%= __('contactFormPlaceholderName') %>" >
+            </div>
+            <div class="form-group">
+              <input name="email" id="email" type="email" class="form-control" placeholder="<%= __('contactFormPlaceholderEmail') %>" >
+            </div>
+            <div class="form-group">
+              <textarea name="message" id="message" cols="" rows="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" placeholder="<%= __('contactFormPlaceholderMessage') %>"></textarea>
+            </div>
+            <input type="submit" id="submit" name="send" class="submitBnt" value="<%= __('contactFormSubmitButton') %>">
+            <div id="simple-msg"></div>
+          </form>
+          <div id="simple-msg"></div>
         </div>
         <!--contact form end-->
       </div>
