@@ -1,4 +1,6 @@
 node_modules
 bower_components
+.tmp
+build
 *.txt
 *.db
