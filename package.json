@@ -10,5 +10,9 @@
     "ejs": "*",
     "i18n-2": "^0.4.6",
     "mandrill-api": "^1.0.39"
+  },
+  "devDependencies": {
+    "jshint-stylish": "^0.2.0",
+    "grunt-contrib-jshint": "^0.10.0"
   }
 }
