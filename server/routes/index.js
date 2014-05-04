@@ -36,7 +36,7 @@ module.exports.sendMessage = function (req, res) {
 
   email.sendMessage(message, function (err, response) {
     if (err) {
-      console.log(JSON.stringify(error));
+      console.log(err);
       res.json({ success: false, message: errorMessage });
     } else {
       res.json({ success: true, message: successMessage });
