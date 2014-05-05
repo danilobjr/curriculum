@@ -64,7 +64,7 @@
     	var top = $('.technical').height()-$(window).scrollTop();
     	// console.log(top)
     	if(top < 1700) {
-        console.log(index);
+        // console.log(index);
     		if(index === 0) {
     			$('.chart').easyPieChart({
     				easing: 'easeOutBounce',
