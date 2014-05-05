@@ -52,6 +52,32 @@ module.exports = function (grunt) {
     clean: {
       build: ['.tmp', 'build/']
     },
+    copy: {
+      server: {
+        src: ['package.json', 'app.js', 'server/**'],
+        dest: 'build/'
+      },
+      locales: {
+        src: 'locales/**',
+        dest: 'build/'
+      },
+      styles: {
+        src: 'public/css/fallback.css',
+        dest: 'build/'
+      },
+      images: {
+        src: 'public/images/**',
+        dest: 'build/'
+      },
+      fonts: {
+        src: 'public/fonts/**',
+        dest: 'build/'
+      },
+      data: {
+        src: 'public/data/**',
+        dest: 'build/'
+      }
+    },
     useminPrepare: {
       html: 'server/views/index.ejs',
       options: {
@@ -69,6 +95,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -82,8 +109,9 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'clean:build',
     'jshint',
+    'clean:build',
+    'copy',
     'useminPrepare',
     'concat',
     'uglify',
