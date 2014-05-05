@@ -1,9 +1,11 @@
 'use strict';
 
-var email = require('./../services/email');
+var email = require('./../services/email'),
+    gravatar = require('gravatar'),
+    profileData = require('./../db//data');
 
 module.exports.index = function(req, res){
-  res.render('index', { locale: req.i18n.getLocale() });
+  res.render('index', { locale: req.i18n.getLocale(), data: { profileImage: gravatar.url(profileData.email, { s: '294', d: 'mm' }) } });
 };
 
 module.exports.changeLocale = function (req, res){

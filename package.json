@@ -9,7 +9,8 @@
     "express": "3.4.8",
     "ejs": "*",
     "i18n-2": "^0.4.6",
-    "mandrill-api": "^1.0.39"
+    "mandrill-api": "^1.0.39",
+    "gravatar": "^1.0.6"
   },
   "devDependencies": {
     "jshint-stylish": "^0.2.0",
