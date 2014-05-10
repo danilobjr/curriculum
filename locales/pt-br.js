@@ -68,6 +68,7 @@
   "portfolioSubheader": "Amostra dos meus últimos trabalhos",
   "portfolioFilterAll": "Todos",
   "portfolioFilter1": "Projetos",
+  "portfolioFilter2": "Web Sites",
   "contactHeader": "Faça contato",
   "contactSubheader": "Por favor, não deixe de mandar um alô.",
   "contactDetails": "Contatos",

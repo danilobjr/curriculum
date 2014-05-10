@@ -68,6 +68,7 @@
   "portfolioSubheader": "showcase of my latest works",
   "portfolioFilterAll": "All",
   "portfolioFilter1": "Projects",
+  "portfolioFilter2": "Web Sites",
   "contactHeader": "Get In Touch",
   "contactSubheader": "Please feel free if you would like to have a chat.",
   "contactDetails": "Contact Details",
