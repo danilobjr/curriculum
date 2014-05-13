@@ -5,7 +5,12 @@ var email = require('./../services/email'),
     profileData = require('./../db//data');
 
 module.exports.index = function(req, res){
-  res.render('index', { locale: req.i18n.getLocale(), data: { profileImage: gravatar.url(profileData.email, { s: '294', d: 'mm' }) } });
+  res.render('index', {
+    locale: req.i18n.getLocale(),
+    data: {
+      profileImage: gravatar.url(profileData.email, { s: '294', d: 'mm' })
+    }
+  });
 };
 
 module.exports.changeLocale = function (req, res){
