@@ -50,6 +50,9 @@ module.exports = function (grunt) {
     },
 
     clean: {
+      options: {
+        force: true
+      },
       build: ['.tmp', 'build/']
     },
     copy: {
