@@ -458,6 +458,12 @@
     jQuery(function($) {
       // setting locale globally, so, this way, js files can access this property
       window.locale = '<%= locale %>';
+
+      var dom = $(document);
+
+      dom
+        .on('mouseenter', '.dropdown', function (e) { $(e.currentTarget).addClass('open'); })
+        .on('mouseleave', '.dropdown', function (e) { $(e.currentTarget).removeClass('open'); });
     });
   </script>
   <script>
