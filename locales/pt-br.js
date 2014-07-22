@@ -1,7 +1,7 @@
 {
-  "tabTitle": "Danilo Barros Jr. | Desenvolvedor Back-end",
+  "tabTitle": "Danilo Barros Jr. | Desenvolvedor Back e Front-End",
   "bannerTitle": "Danilo Barros Jr.",
-  "bannerSubtitle": "Desenvolvedor Back-End e amante do Node.js",
+  "bannerSubtitle": "Desenvolvedor Back e Front-End e amante do Node.js",
   "menuAbout": "Sobre",
   "menuSkills": "Habilidades",
   "menuExperience": "Experiência",
@@ -49,7 +49,7 @@
   "experience2EndDate": "Até Hoje",
   "experience2Local": "Freelancer",
   "experience2Function": "Desenvolvedor Web",
-  "experience2Description": "Fiz alguns trabalhos para alguns clientes nesse período. E também, várias novas tecnologias estavam me fascinando. Li muitos livros sobre Node.js, MongoDB, Grunt.js e acabei decidindo desenvolver um projeto chamado Node.js Boilerplate.",
+  "experience2Description": "Fiz alguns trabalhos para alguns clientes nesse período. E também, várias novas tecnologias estavam me fascinando. Li muitos livros sobre Node.js, MongoDB, Grunt.js, Angular.js e entrei de cabeça nessas e outras tecnologias open-source.",
   "educationHeader": "Diplomas & Cursos",
   "educationSubheader": "O que tenho feito para incrementar minha carreira",
   "education1Date": "Mar,2009",
