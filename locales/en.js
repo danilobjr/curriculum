@@ -1,7 +1,7 @@
 {
 	"tabTitle": "Danilo Barros Jr. | Back-end Developer",
 	"bannerTitle": "Danilo Barros Jr.",
-	"bannerSubtitle": "Back and Front-End Developer and Node.js lover",
+	"bannerSubtitle": "Back and Front-End Developer",
 	"menuAbout": "About",
 	"menuSkills": "Skills",
 	"menuExperience": "Experience",
